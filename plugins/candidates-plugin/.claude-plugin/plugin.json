@@ -1,0 +1,9 @@
+{
+  "name": "candidates",
+  "version": "0.1.0",
+  "description": "Candidate intake and Notion pipeline management for biotech recruiting",
+  "author": {
+    "name": "Bryan Blair",
+    "url": "https://github.com/bigbubs0"
+  }
+}

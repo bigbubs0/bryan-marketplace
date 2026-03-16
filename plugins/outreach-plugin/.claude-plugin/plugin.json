@@ -1,0 +1,9 @@
+{
+  "name": "outreach",
+  "version": "0.1.0",
+  "description": "Voice DNA-personalized outreach emails with Notion intelligence",
+  "author": {
+    "name": "Bryan Blair",
+    "url": "https://github.com/bigbubs0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "bryan-marketplace",
+  "owner": {
+    "name": "Bryan Blair",
+    "url": "https://github.com/bigbubs0"
+  },
+  "plugins": [
+    {
+      "name": "candidates",
+      "source": "./plugins/candidates-plugin",
+      "description": "Candidate intake and Notion pipeline management for biotech recruiting"
+    },
+    {
+      "name": "signals",
+      "source": "./plugins/signals-plugin",
+      "description": "Biotech signal tracking - funding, layoffs, clinical data, weekly digests, client briefs"
+    },
+    {
+      "name": "outreach",
+      "source": "./plugins/outreach-plugin",
+      "description": "Voice DNA-personalized outreach emails with Notion intelligence"
+    }
+  ]
+}

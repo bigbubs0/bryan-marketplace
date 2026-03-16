@@ -1,0 +1,9 @@
+{
+  "name": "signals",
+  "version": "0.1.0",
+  "description": "Biotech signal tracking - funding, layoffs, clinical data, weekly digests, client briefs",
+  "author": {
+    "name": "Bryan Blair",
+    "url": "https://github.com/bigbubs0"
+  }
+}
