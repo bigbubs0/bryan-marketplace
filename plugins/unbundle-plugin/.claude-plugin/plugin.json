@@ -1,0 +1,10 @@
+{
+  "name": "unbundle",
+  "version": "1.0.0",
+  "description": "Use when the user wants to operationalize a \"bundled\" term — a soft skill (charisma, executive presence, active listening), a fuzzy workflow (client onboarding, content batch, weekly review), or an identity/belief (strategic, disciplined, curious) — into concrete, trainable, daily actions. Trigger phrases include \"unbundle this\", \"operationalize\", \"what does X actually mean\", \"how do I actually become more Y\", \"break this workflow into steps\", \"what does a [role] actually do daily\", \"turn this into a checklist\", \"I keep hearing be more X but don't know what to do\". Walks the user through a three-track interview (Workflow / Soft Skill / Belief) using AskUserQuestion, then returns 5-12 daily-trainable actions with optional micro-routines.",
+  "author": {
+    "name": "Speakeasy"
+  },
+  "license": "MIT",
+  "keywords": ["cowork", "skill"]
+}

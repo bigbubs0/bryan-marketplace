@@ -1,5 +1,6 @@
 {
   "name": "bryan-marketplace",
+  "description": "Bryan Blair's biotech recruiting plugin marketplace - candidate intake, signal tracking, outreach, and workflow tools",
   "owner": {
     "name": "Bryan Blair",
     "url": "https://github.com/bigbubs0"
@@ -19,6 +20,11 @@
       "name": "outreach",
       "source": "./plugins/outreach-plugin",
       "description": "Voice DNA-personalized outreach emails with Notion intelligence"
+    },
+    {
+      "name": "unbundle",
+      "source": "./plugins/unbundle-plugin",
+      "description": "Operationalize a bundled term (soft skill, fuzzy workflow, or belief) into concrete, daily-trainable actions"
     }
   ]
 }
