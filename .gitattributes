@@ -1,0 +1,6 @@
+# Every file is stored and checked out byte-exact. No eol conversion.
+# Added 2026-09-05 (drift audit): global core.autocrlf=true rewrote every SKILL.md in the
+# installed marketplace clone to CRLF, so the installed copy never hashed equal to this
+# repo (unbundle: 7056b vs 6905b, 151 CRLFs). Same pattern as the OneDrive repo's
+# mirrors/** -text rule.
+* -text
