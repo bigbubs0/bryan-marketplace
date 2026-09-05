@@ -1,91 +1,29 @@
 ---
 name: outreach
-description: Generate personalized outreach emails using Notion intel and Voice DNA profiles. Accepts company/person name + outreach type (client-bd, candidate-approach, follow-up, intro).
+description: RETIRED 2026-08-05. Do not use. Superseded by the outreach-from-feed skill and the BD pre-send gate. This stub exists only so the outreach@bryan-marketplace plugin manifest still resolves.
 disable-model-invocation: true
 ---
 
-# Outreach Email Generator
+# RETIRED - do not generate from this skill
 
-Generate ready-to-send outreach emails personalized with Notion intelligence and Bryan's Voice DNA profiles.
+This skill was retired on 2026-08-05. It existed as five byte-identical copies
+(md5 `4991b769d033`), three of them loadable, and carried three rules that
+contradict canonical:
 
-## Usage
+| Line | Said | Canonical |
+|---|---|---|
+| 42 | `Use "intelligence-driven search", "the data tells us..."` | Both are on the banned-language list |
+| 60 | `Use 'Search Consultant' never 'recruiter'` | Wrong at retirement time (the term was retired 2026-07-20). Superseded again 2026-08-22: "Search Consultant" IS the client- and candidate-facing role term; owner is the CLAUDE.md Communication block, not this file |
+| 63 | `150 words max for initial outreach` | Never binding. Real first-touch mean is 84.4 words across 335 sends |
 
-`/outreach [target] [type]`
+**If you were about to generate BD outreach:** use `outreach-from-feed`, then run
+`scripts/bd_pre_send_gate.py` before anything ships.
 
-Examples:
-- `/outreach Regeneron client-bd` - BD outreach to a prospect
-- `/outreach John Smith candidate-approach for Aditum CMO` - Candidate sourcing email
-- `/outreach Sarah Chen follow-up after interview at IDEAYA` - Post-interview follow-up
-- `/outreach Ionis intro new VP Clinical candidate` - Client intro of a candidate
+The original body is in git history, blob `7b8e6ee`:
+`git show adc4b8a:plugins/outreach-plugin/skills/outreach/SKILL.md`. The `_to_delete`
+copy and the `.bak-2026-08-05b-pre-retirement` sibling this stub used to cite were
+removed 2026-09-05 - the `.bak` was byte-identical to that blob.
 
-## Outreach Types
-
-| Type | Voice DNA Profile | Purpose |
-|------|------------------|---------|
-| `client-bd` | Client-facing: professional, consultative, data-driven | New business development |
-| `candidate-approach` | Candidate advancement: direct, CLABVISSS control | Source/approach a candidate |
-| `candidate-coach` | Candidate coaching: supportive, preparation-focused | Interview prep, offer guidance |
-| `follow-up` | Context-dependent | Post-meeting or post-interview |
-| `intro` | Client-facing: fact-forward, structured | Introduce a candidate to a client |
-
-## Workflow
-
-### Step 1: Gather Intel
-Based on the target:
-- **Company target**: Search Company Core (`collection://f371c4ed-be14-468e-a197-822154951845`) for company data
-- **Pull recent signals**: Check Positive Data, Funding, and Layoffs databases for the company
-- **Check Job Alerts**: Look for open roles at the company (`collection://e83b1888-f65a-486d-bc1f-c0071623f9af`)
-- **Person target**: If a specific person is named, note their context (candidate, client contact)
-
-### Step 2: Select Voice Profile
-Apply the correct Voice DNA based on outreach type:
-- **Client-facing**: Professional, consultative, question-oriented. Use "intelligence-driven search", "the data tells us..."
-- **Candidate advancement**: Direct, CLABVISSS control language. Focus on opportunity, not selling.
-- **Candidate coaching**: Supportive but honest, preparation-focused
-- **Transactional**: Efficient, structured, fact-forward
-
-### Step 3: Personalize with Signals
-Weave relevant signals into the email as conversation hooks:
-- Recent funding = growth signal, hiring likely
-- Positive clinical data = pipeline advancing, team scaling
-- Layoffs at competitors = talent availability angle
-- Open roles on Job Alerts = direct relevance
-
-### Step 4: Draft Email
-
-**Formatting rules (mandatory):**
-- Greeting: `Hi [Name],`
-- Use hyphens (-) never em dashes
-- Use 'CV' not 'resume'
-- Use 'Search Consultant' never 'recruiter'
-- Keep it scannable - no fluff, no corporate jargon
-- Casual, conversational, likable tone
-- 150 words max for initial outreach, 100 words max for follow-ups
-
-**Structure for client-bd:**
-1. Signal-based hook (1 sentence referencing something specific)
-2. Value prop (1-2 sentences on what GQR brings)
-3. Soft ask (question, not demand)
-
-**Structure for candidate-approach:**
-1. Why them specifically (1 sentence)
-2. The opportunity (2-3 sentences, highlight what matters to candidates)
-3. Next step (direct ask for a call)
-
-**Structure for intro:**
-1. Candidate headline (name, current role, key differentiator)
-2. Why this candidate for this role (2-3 bullets)
-3. CV attached note
-
-### Step 5: Output
-Present the email ready to copy/paste. Include:
-- Subject line
-- Email body
-- Any signals used as context (for Bryan's reference, not in the email)
-
-## Anti-Patterns (avoid these)
-- Don't use "I hope this finds you well" or any variant
-- Don't use "touching base" or "circling back"
-- Don't over-explain GQR - let the intel speak
-- Don't write more than 3 paragraphs for any outreach type
-- Don't use buzzwords: synergy, leverage, robust, streamline, holistic
+The durable fix is removing `outreach` from the plugin's skill list in
+`repos/bryan-marketplace/plugins/outreach-plugin/` and re-releasing, then
+`/plugin update bryan-marketplace`. This stub is the safe interim.
